@@ -19,8 +19,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { AngularFireAuthModule, AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { ClientService } from './services/client.service';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -44,9 +45,9 @@ import { ClientService } from './services/client.service';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase,'clientpanel'),
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
   ],
-  providers: [ClientService],
+  providers: [ClientService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
