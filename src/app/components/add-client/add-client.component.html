@@ -20,7 +20,7 @@
                         name="firstName"
                         #clientFirstName="ngModel"
                         [ngClass]="{'is-invalid':clientFirstName.errors && clientFirstName.touched}"
-                        [(ngModel)]="firstName"
+                        [(ngModel)]="client.firstName"
                         minlength="2"
                         required
                         >
@@ -39,7 +39,7 @@
                         name="lastName"
                         #clientLastName="ngModel"
                         [ngClass]="{'is-invalid':clientLastName.errors && clientLastName.touched}"
-                        [(ngModel)]="lastName"
+                        [(ngModel)]="client.lastName"
                         minlength="2"
                         required
                         >
@@ -53,7 +53,7 @@
                     <div class="form-group">
                         <label for="email">Email </label>
                         <input type="text" class="form-control" name="email" #clientEmail="ngModel"
-                            [ngClass]="{'is-invalid':clientEmail.errors && clientEmail.touched}" [(ngModel)]="email"
+                            [ngClass]="{'is-invalid':clientEmail.errors && clientEmail.touched}" [(ngModel)]="client.email"
                             pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" required>
                         <div [hidden]="!clientEmail.errors?.required" class="invalid-feedback">
                             Email Required.
@@ -65,7 +65,7 @@
                     <div class="form-group">
                         <label for="phone">Phone</label>
                         <input type="text" class="form-control" name="phone" #clientPhone="ngModel"
-                            [ngClass]="{'is-invalid':clientPhone.errors && clientPhone.touched}" [(ngModel)]="phone"
+                            [ngClass]="{'is-invalid':clientPhone.errors && clientPhone.touched}" [(ngModel)]="client.phone"
                             minlength="10" required>
                         <div [hidden]="!clientPhone.errors?.required" class="invalid-feedback">
                             Phone no. is required.
