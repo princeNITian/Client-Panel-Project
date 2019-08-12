@@ -18,22 +18,22 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.authService.getAuth().subscribe(auth =>{
-      if(auth){
+    this.authService.getAuth().subscribe(auth => {
+      if (auth) {
         this.router.navigate(['/']);
       }
     })
   }
 
   onSubmit() {
-    this.authService.login(this.email,this.password)
+    this.authService.login(this.email, this.password)
     .then(res => {
-      this.flashMessage.show("You are now logged in.",{
-        cssClass: 'alert-success',timeout: 4000
+      this.flashMessage.show('You are now logged in.', {
+        cssClass: 'alert-success', timeout: 4000
       });
       this.router.navigate(['/']);
     })
-    .catch(err =>{
+    .catch(err => {
       this.flashMessage.show(err.message, {
         cssClass: 'alert-danger', timeout: 4000
       });
